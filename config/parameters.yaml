@@ -1,0 +1,27 @@
+chromosome_name: # Name of the chromosome id to be analyzed e.g. NC_000913.3
+
+# Tool parameter options
+trimming_parameters: 
+  quality_cutoff: 20
+  threads: 8
+
+alignment_params:
+  memory_mb: 4000
+  threads: 8
+
+# Optional read group data
+read_group_params:       
+  SORT_ORDER: coordinate
+  RGID: "FOO"
+  RGLB: "BAR"
+  RGPL: "FOO"
+  RGSM: "BAR"
+  RGPU: "illumina"
+
+variant_calling_params:
+  memory_mb: 4000
+  threads: 8
+
+variant_analysis_params:
+  memory_mb: 4000
+  threads: 8

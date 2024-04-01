@@ -1,0 +1,15 @@
+# Path/to/reference_genome
+reference_genome: # full path to reference genome without extension
+reference_genome_ext: # extension of reference genome e.g fasta, fa, fna
+
+# Path and extension for sample data
+sample_dir: "../data/"
+sample_ext: ".fastq.gz"
+
+# Path/to/results_dir/
+results_dir: "../results/"
+
+gatk: # Path/to/gatk/gatk-4.5.0.0/gatk-package-4.5.0.0-local.jar
+
+# Path to java installation (requires jdk/jre >= 17)
+java: "/usr/bin/java"

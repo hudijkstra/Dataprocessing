@@ -1,0 +1,30 @@
+'''
+Main script to be executed.
+Includes all necessary Snakefiles needed
+to execute the workflow.
+'''
+
+configfile: "../config/paths.yaml"
+configfile: "../config/parameters.yaml"
+
+SAMPLES = [sample.split(".")[0] for sample in os.listdir(config["sample_dir"])]
+
+rule all:
+    input:
+        # expand("../results/pre_processed/{sample}.fastq.gz", sample=SAMPLES)
+        # expand("../results/aligned/{sample}.bam", sample=SAMPLES)
+        # expand("../logs/post_processing/{sample}_validation.log", sample=config["samples"]),
+        # expand("../results/variants/{sample}.vcf", sample=SAMPLES)
+        # expand("../results/post_processing/{sample}_marked.bam", sample=config['samples'])
+        # "../results/combined_variants/all_samples_combined.vcf"
+        # expand("{dir}chromosome_subsets/{chromosome}_variants.vcf", chromosome=config["chromosome_name"], dir=config["results_dir"])
+        pdf=expand("{results_dir}variant_evaluation/{chr_id}.pdf",results_dir=config["results_dir"], chr_id=config["chromosome_name"]),
+        vcf_files=expand("{results_dir}variants/{sample}.vcf", sample=SAMPLES, results_dir=config["results_dir"])
+
+include: "rules/functions.smk"
+include: "rules/pre_processing.smk"
+include: "rules/genome_indexing.smk"
+include: "rules/alignment.smk"
+include: "rules/post_processing.smk"
+include: "rules/variant_calling.smk"
+include: "rules/variant_evaluation.smk"
