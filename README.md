@@ -1,9 +1,9 @@
 **Thema 11 - Dataprocessing**  
-Authors: H. Dijkstra 
-Date: 17th March 2024   
-Version: Bio-informatica 3, Minor  
+Author: H. Dijkstra 
+Date: 30th March 2024   
+Version: 1.0
 
-This repo contains the snakemake pipeline of the dataprocessing end assignment of theme 11. The pipeline is inspired by this [article](https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-016-1431-9.pdf). 
+This repo contains the snakemake pipeline made as a learning project for the minor "High Throughput / High-performance Biocomputing". The pipeline is inspired by this [article](https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-016-1431-9.pdf). 
 
 ---
 ## Prerequisites  
@@ -52,7 +52,7 @@ The paths.yaml and parameters.yaml files include supplementary settings for user
 snakemake -j [number of jobs]
 ```
 
-## The output
+## Output
 The pipeline produces and processes a VCF file, generating a PDF report located in results/variant_evaluation. This report includes chromosome-wise annotation density and read depth/quality metrics, aiding in the analysis of genetic variations.
 
 ## Rules
